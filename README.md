@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## 万印宝小程序
 
 ## 1 项目node包统一使用yarn管理
@@ -27,3 +28,6 @@ yarn：
 yarn config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
 
 然后可以正常使用npm或者yarn进行下载了~
+=======
+# wyb小程序
+>>>>>>> fd4be1b7060e8c24536449beda162fdd11f5aae4
