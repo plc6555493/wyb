@@ -1,0 +1,32 @@
+.pointBase1{
+    width: 650px;
+    height: 50px;
+    display: inline-block;
+}
+.pointBase1{
+  .txt1{
+      //margin-top: 16px;
+      margin-left: 25px;
+      font-size: 30px;
+      font-weight: bold;
+      color: rgba($color: #000000, $alpha: 1.0);
+  }
+  .txt2{
+      float: right;
+      margin-top: 5px;
+      margin-right: 25px;
+      font-size: 30px;
+      font-weight: bold;
+      color: rgba($color: #EE1717, $alpha: 1.0);
+  }
+  .txt3{
+      float: right;
+      margin-top: 5px;
+      font-size: 30px;
+      font-weight: bold;
+      color: rgba($color: #EE1717, $alpha: 1.0);
+  }
+  .txt4{
+      display: none;
+  }
+}

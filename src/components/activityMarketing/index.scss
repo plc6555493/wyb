@@ -1,0 +1,20 @@
+.more{
+  display: inline-block;
+  position: relative;
+  margin-top:40px;
+  margin-left: 50px;
+  box-shadow:  0  6px 32px rgba(0,0,0,.1);
+  border-radius: 24px;
+  width: 300px;
+  height: 300px;
+  float:left;
+
+  .more_text{
+    margin-top: 108px;
+    margin-left: 80px;
+    width: 134px;
+    height: 74px;
+    color: #999999;
+    font-size: 30px;
+  }
+}

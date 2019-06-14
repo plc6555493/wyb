@@ -1,0 +1,94 @@
+
+.index{
+    .block{
+        position:relative;
+    }
+    .name{
+        position:absolute;
+        width: 300px;
+        height: 36px;
+        font-size: 36px;
+        font-family: PingFangSC-Semibold;
+        font-weight: Semibold;
+        left:346px;
+        top:28px;
+    }
+    .adr{
+        position:absolute;
+        width: 324px;
+        height: 40px;
+        font-size: 20px;
+        left:346px;
+        top:76px;
+    }
+    .vip{
+        position: absolute;
+        width: 56px;
+        height: 30px;
+        top:36px;
+        right: 36px;
+    }
+    .add{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        bottom:30px;
+        right: 16px;
+    }
+    .num{
+        position: relative;
+        background-color:#FFE0CF;
+        width: 120px;
+        height: 24px;
+        left: 346px;
+        top: 140px;
+        .data{
+            font-size: 14px;
+            position: absolute;
+            top:5px;
+            left: 7px;
+            }
+    }
+    .rmb{
+        color: #D62D2D;
+        position: absolute;
+        left: 346px;
+        top: 186px;
+        font-size: 60px; 
+    }
+    .float{
+        position: fixed;
+        width: 750px;
+        height: 80px;
+        bottom: 0px;
+        background-color: #3176E7;
+        .next{
+            position: absolute;
+            left: 50%;
+            transform:translateX(-50%);
+            color: #fff;
+            font-size: 40px;
+            line-height: 80px
+        }
+    }
+    .fab{
+        position:fixed;
+        left: 256px;
+        bottom: 102px;
+        .at-fab__icon{
+            color: #D62D2D;
+        }
+    }
+    .snum{
+        position: fixed;
+        left: 684px;
+        top: 780px;
+        width: 36px;
+        height: 22px;
+        text-align: center;
+        font-size:18px; 
+        border-radius:8px; 
+        color: rgb(255, 255, 255);
+        background-color: #D62D2D
+    }
+}

@@ -1,0 +1,49 @@
+
+.adv7{
+    width: 750px;
+    height: 1444px;
+    .view1{
+        text-align:center;
+        .img1{
+            background-repeat: no-repeat;
+            height: 100px;
+            width: 100px;
+            margin-top: 250px;
+            margin-left: 0px;
+            margin-right: 0px;
+            
+        }
+
+    }
+    .view2{
+        text-align:center;
+        .txt1{
+            margin-left: 0px;
+            margin-right: 0px;
+            font-size: 35px;
+        }
+        
+    } 
+    .view3{
+        text-align:center;
+        .txt2{
+            margin-left: 0px;
+            margin-right: 0px; 
+            font-weight: bold;
+            font-size: 35px;
+        }
+    }   
+    .view4{
+        .btnUploadAdv{
+            width: 300px;
+            height: 80px;
+            font-weight: 500;
+            font-size: 35px;
+            border-radius: 90px;
+            color: rgba($color: #FFFFFF, $alpha: 1.0);
+            text-align: center;
+            background-color: rgba($color: #3176E7, $alpha: 1.0);
+        }
+    }
+
+}

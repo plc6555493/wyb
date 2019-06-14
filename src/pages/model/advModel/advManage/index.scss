@@ -1,0 +1,219 @@
+.demo11{
+    width: 750px;
+    height: 1214px;
+    //overflow: hidden;
+    background-color: #edece8;
+}
+.back{
+    width:650px;
+    height: 100%;
+    background-color: white;
+    float: right;
+}
+//右边缺省页
+.emptyList{
+    width: 350px;
+    height: 393px;
+    position: fixed;
+    bottom: 551px;
+    left:200px;
+}
+
+/*右边订单*/
+.order{
+    width: 602px;
+    height: 840px;
+    background-color: white;
+    float: right;
+    margin-right: 25px;
+    border-radius: 24px;
+    box-shadow: 0 32px 64px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+/*头部标题*/
+.title{
+    width: 100%;
+    height: 60px;
+    background-color: #1EE37F;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 60px;
+    border-radius: 24px 24px 0 0;
+}
+.id{
+    width: 238px;
+    height: 28px;
+    font-size: 36px;
+    color: #FEFEFE;
+    margin-left: 30px;
+}
+.date{
+    width: 244px;
+    height: 18px;
+    font-size: 24px;
+    color: #FEFEFE;
+    margin-right: 30px;
+}
+/*广告内容*/
+.advert{
+    width: 540px;
+    height: 110px;
+    /*background-color: pink;*/
+    margin: 20px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.advert-title{
+    font-size: 30px;
+    height: 30px;
+}
+.advert-content{
+    width: 100%;
+    height: 60px;
+    /*background-color: palegreen;*/
+}
+.input{
+    width: 420px;
+    height: 60px;
+    font-size: 30px;
+    color: #AAAAAA;
+    text-align: center;
+    /*background-color: darkmagenta;*/
+    border-radius: 10px;
+    border: 1px solid #AAAAAA;
+    box-sizing: border-box;
+    float: left;
+}
+.preview,.upload{
+    width: 60px;
+    height: 60px;
+    float: left;
+}
+/*投放时长*/
+.duration{
+    width: 540px;
+    height: 108px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*background-color: gold;*/
+    margin: 56px auto 0 auto;
+}
+.duration-title{
+    font-size: 30px;
+    height: 30px;
+}
+.duration-content{
+    width: 100%;
+    height: 60px;
+    margin-top: 20px;
+    /*background-color: aqua;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.seconds{
+    width: 120px;
+    height: 60px;
+    font-size: 30px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #AAAAAA;
+}
+/*投放周期*/
+.period{
+    width: 540px;
+    height: 80px;
+    /*background-color: sandybrown;*/
+    margin: 56px auto 0 auto;
+    box-sizing: border-box;
+}
+.period-title{
+    font-size: 30px;
+    height: 30px;
+    box-sizing: border-box;
+}
+.point{
+    font-size: 20px;
+    color:#3176E7;
+    float: right;
+}
+.period-content{
+    width: 100%;
+    height: 30px;
+    color: #AAAAAA;
+    font-size: 24px;
+    margin-top: 20px;
+    /*background-color: rebeccapurple;*/
+    box-sizing: border-box;
+}
+/*投放设备*/
+.equipment{
+    width: 540px;
+    height: 220px;
+    /*background-color: navajowhite;*/
+    margin: 50px auto 0 auto;
+
+}
+.equipment-title{
+    font-size: 30px;
+    height: 30px;
+}
+.equipment-content{
+    width: 100%;
+    height: 172px;
+    color: #AAAAAA;
+    font-size: 24px;
+    text-align: start;
+    line-height: 34px;
+    /*background-color: olivedrab;*/
+    margin-top: 20px;
+}
+/*确认修改*/
+.bottom{
+    width: 100%;
+    height: 80px;
+    background-color: #3176E7;
+    color: white;
+    font-size: 36px;
+    border-radius: 0 0 24px 24px;
+    text-align: center;
+    line-height: 80px;
+    display: inline-block;
+}
+
+/*左边导航*/
+.tabBar{
+    width: 100px;
+    height: 1214px;
+    position: fixed;
+    background-color: #edece8;
+    border: 1px solid white;
+}
+.tabBarBig{
+    width: 100%;
+    height: 200px;
+    //background-color: darkcyan;
+    text-align: center;
+    line-height: 150px;
+    /*border-radius: 0 0 0 50%;*/
+}
+
+.tabBar1,.tabBar2{
+    width: 58px;
+    height: 58px;
+}
+.tabFont{
+    width:100px;
+    height:17px;
+    font-size:18px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(187,187,187,1);
+    line-height:44px;
+    display: block;
+    margin-top: -30px;
+}

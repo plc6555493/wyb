@@ -1,0 +1,203 @@
+
+.adv8{
+    width: 750px;
+    height: 1444px;
+    .txt1{
+        font-size: 35px;
+        font-weight: bold;
+        margin-left: 25px;
+    }
+    .view1{
+        .view1h2{
+            .btnPicAdv1{
+                text-align: center;
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+            .img1{
+                width:650px;
+                height:200px;
+                border-radius: 24px;
+                background-repeat: no-repeat;
+                border:1px solid #dddddd;
+                //box-shadow: 0px 8px 32px 2px rgba($color: #000000, $alpha: 0.3);
+            }
+        }
+        .view1h3{
+            .btnVideoAdv1{
+                text-align: center;
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+            .img2{
+                width:650px;
+                height:200px;
+                border-radius: 24px;
+                background-repeat: no-repeat;
+                border:1px solid #dddddd;
+                //box-shadow: 0px 8px 32px 2px rgba($color: #000000, $alpha: 0.3);
+            }
+        }
+        
+    }
+    .view2{
+        .view2h1{
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 650px;
+            height: 60px;
+            display: inline;
+        }
+        .view2h1{
+            .input{
+                // display: inline-block;
+                width: 580px;
+                height: 58px;
+                font-size: 30px;
+                color: #AAAAAA;
+                border-radius: 10px;
+                border: 1px solid #AAAAAA;
+                float: left;
+            }
+            .upload{
+                // display: inline-block;
+                width: 60px;
+                height: 60px;
+                float: left;
+            }
+        }
+        .view2h2{
+            text-align: center;
+            .btnLen1{
+                width: 150px;
+                display: inline-block;
+                font-size: 30px;
+                color: rgba($color: #3176E7, $alpha: 1.0);
+                background-color: rgba($color: #FFFFFF, $alpha: 1.0); 
+                border: 1px solid #dddddd; 
+                //box-shadow: 5px 5px 30px 2px rgba($color: #000000, $alpha: 0.13);
+            }
+            .btnLen2{
+                margin-left: 20px;
+                width: 150px;
+                display: inline-block;
+                font-size: 30px;
+                color: rgba($color: #3176E7, $alpha: 1.0);
+                background-color: rgba($color: #FFFFFF, $alpha: 1.0);
+                border:1px solid #dddddd;
+                //box-shadow: 5px 5px 30px 2px rgba($color: #000000, $alpha: 0.13);
+            }
+        }
+        .view2h4{
+            text-align: center;
+            .btnLen3{
+                width: 150px;
+                display: inline-block;
+                font-size: 30px;
+                color: rgba($color: #3176E7, $alpha: 1.0);
+                background-color: rgba($color: #FFFFFF, $alpha: 1.0);
+                border: 1px solid #dddddd;
+                //box-shadow: 5px 5px 30px 2px rgba($color: #000000, $alpha: 0.13);
+            }
+            .btnLen4{
+                margin-left: 20px;
+                width: 150px;
+                display: inline-block;
+                font-size: 30px;
+                color: rgba($color: #3176E7, $alpha: 1.0);
+                background-color: rgba($color: #FFFFFF, $alpha: 1.0);
+                border: 1px solid #dddddd;
+                //box-shadow: 5px 5px 30px 2px rgba($color: #000000, $alpha: 0.13);
+            }
+        }
+    }
+    .view4{
+        .view4h1{
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 650px;
+            height: 60px;
+            display: inline;
+        }
+        .view4h1{
+            .input2{
+                //display: inline-block;
+                width: 580px;
+                height: 58px;
+                font-size: 30px;
+                color: #AAAAAA;
+                border-radius: 10px;
+                border: 1px solid #AAAAAA;
+                float: left;
+            }
+            .upload2{
+                //display: inline-block;
+                width: 60px;
+                height: 60px;
+                float: left;
+            }
+        }
+        .view4h2{
+            text-align: center;
+            .btnLen1{
+                width: 150px;
+                display: inline-block;
+                font-size: 30px;
+                color: rgba($color: #3176E7, $alpha: 1.0);
+                background-color: rgba($color: #FFFFFF, $alpha: 1.0);
+                border: 1px solid #dddddd;
+                //box-shadow: 5px 5px 30px 2px rgba($color: #000000, $alpha: 0.13);
+            }
+            .btnLen2{
+                margin-left: 20px;
+                width: 150px;
+                display: inline-block;
+                font-size: 30px;
+                color: rgba($color: #3176E7, $alpha: 1.0);
+                background-color: rgba($color: #FFFFFF, $alpha: 1.0);
+                border: 1px solid #dddddd;
+                //box-shadow: 5px 5px 30px 2px rgba($color: #000000, $alpha: 0.13);
+            }
+        }
+        .view4h4{
+            text-align: center;
+            .btnLen3{
+                width: 150px;
+                display: inline-block;
+                font-size: 30px;
+                color: rgba($color: #3176E7, $alpha: 1.0);
+                background-color: rgba($color: #FFFFFF, $alpha: 1.0);
+                border: 1px solid #dddddd;
+                //box-shadow: 5px 5px 30px 2px rgba($color: #000000, $alpha: 0.13);
+            }
+            .btnLen4{
+                margin-left: 20px;
+                width: 150px;
+                display: inline-block;
+                font-size: 30px;
+                color: rgba($color: #3176E7, $alpha: 1.0);
+                background-color: rgba($color: #FFFFFF, $alpha: 1.0);
+                border: 1px solid #dddddd;
+                //box-shadow: 5px 5px 30px 2px rgba($color: #000000, $alpha: 0.13);
+            }
+        }
+    }
+    .view3{
+        .btnSubmit1{
+            width: 100%;
+            height: 90px;
+            border-radius: 0;
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgba($color: #FFFFFF, $alpha: 1.0);
+            text-align: center;
+            background-color: rgba($color: #3176E7, $alpha: 1.0);
+            position:fixed; 
+            bottom:0;
+        }
+    }
+}

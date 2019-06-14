@@ -1,0 +1,66 @@
+
+.index{
+    .block{
+        position:relative;
+        margin-left: 30px;
+        margin-bottom:14px;
+        width: 690px;
+        height: 260px;
+        .hotel{
+            position:absolute;
+            width: 690px;
+            border-radius: 25px;
+            height: 260px;
+        }
+        .name{
+            position:absolute;
+            font-size: 36px;
+            left:346px;
+            top:28px;
+        }
+        .vip{
+            position: absolute;
+            width: 56px;
+            height: 30px;
+            top:32px;
+            right: 36px;
+        }
+        .adr{
+            position:absolute;
+            font-size: 18px;
+            left:346px;
+            top:76px;
+            color: #999999
+        }
+        .num{
+            position: absolute;
+            background-color:#FFE0CF;
+            width: 116px;
+            height: 20px;
+            left: 346px;
+            top: 126px;
+            border:2px solid #E97171;
+            .data{
+                position: absolute;
+                font-size: 14px;
+                left: 9.78px;
+                text-align: 24px;
+                }
+        }
+        .add{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            bottom:30px;
+            right: 16px;
+        }
+       
+        .rmb{
+            color: #D62D2D;
+            position: absolute;
+            left: 346px;
+            bottom: 32px;
+            font-size: 60px; 
+        }
+    }
+}

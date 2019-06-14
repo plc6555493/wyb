@@ -1,0 +1,114 @@
+.map{
+    position: relative;
+}
+.myMap{
+    width: 750px;
+    height: 1206px;
+}
+/*右边按钮*/
+.hasChoose{
+    width: 80px;
+    height: 80px;
+    background-color: #3176E7;
+    position: absolute;
+    left: 630px;
+    top:512px;
+    border-radius: 50%;
+    color:#fff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 80px;
+    box-shadow: 0 16px 64px rgba(0,0,255,0.3);
+}
+.addNumber{
+    width: 36px;
+    height: 22px;
+    border-radius: 8px;
+    background-color: #D62D2D;
+    position: absolute;
+    left: 674px;
+    top: 506px;
+    z-index: 99;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    line-height: 22px;
+}
+.mapNav{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 630px;
+    top:610px;
+    border-radius: 50%;
+    box-shadow: 0 16px 64px rgba(0,0,255,0.3);
+}
+/*底部展示板*/
+.address{
+    width: 600px;
+    height: 440px;
+    position: absolute;
+    left: 76px;
+    top:744px;
+    background-color: white;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0 16px 64px rgba(0,0,255,0.3);
+}
+.addressPic{
+    width: 520px;
+    height: 236px;
+    background-color: green;
+    margin-left: 40px;
+}
+.address .msg1{
+    font-size: 36px;
+    margin-left: 34px;
+}
+.address .msg2{
+    font-size: 24px;
+    color:#999999;
+    margin-left: 34px;
+}
+.address .msg3{
+    font-size: 24px;
+    color:#2CE880;
+    margin-left: 34px;
+}
+
+/*下一步*/
+.next{
+    position: absolute;
+    left: 276px;
+    top:1120px;
+    color: white;
+    font-size: 36px;
+    background-color: #3176E7;
+    width: 200px;
+    height: 80px;
+    border-radius: 40px;
+    text-align: center;
+    line-height: 80px;
+    box-shadow: 0 16px 64px rgba(0,0,255,0.3);
+}
+/*侧边留白*/
+.left,.right{
+    width: 36px;
+    height: 380px;
+    background-color: white;
+    position: absolute;
+}
+.left{
+    left: 0;
+    top: 770px;
+    border-radius: 0 24px 24px 0;
+    box-shadow: 0 16px 64px rgba(0,0,255,0.3);
+}
+.right{
+    left: 716px;
+    top: 770px;
+    border-radius: 24px 0 0 24px;
+    box-shadow: 0 16px 64px rgba(0,0,255,0.3);
+}

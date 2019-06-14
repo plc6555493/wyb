@@ -1,0 +1,79 @@
+
+.index {
+  .head {
+    width: 750px;
+    height: 100px;
+
+    .province {
+      float: left;
+      margin-top: 30px;
+      margin-left: 122px;
+      font-size: 36px;
+      color: #3176E7;
+    }
+    .down1 {
+      float: left;
+      margin-top: 48px;
+      margin-left: 28px;
+      width: 22px;
+      height: 8px;
+    }
+    .city {
+      float: left;
+      font-size: 36px;
+      margin-left: 204px;
+      margin-top: 30px;
+      color: #3176E7
+    }
+    .down2 {
+      float: left;
+      margin-top: 48px;
+      margin-left: 28px;
+      width: 22px;
+      height: 8px;
+    }
+  }
+  .sel {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    left: 640px;
+    bottom: 400px;
+  }
+  .float {
+    position: fixed;
+    border-radius: 40px;
+    width: 240px;
+    height: 80px;
+    left: 256px;
+    box-shadow: 0 6px 32px rgba(49, 118, 231, .8);
+    bottom: 0px;
+    background-color: #3176E7;
+    .next {
+      position: relative;
+      left: 65px;
+      top: 15px;
+      font-size: 36px;
+      color: white
+    }
+  }
+  .map {
+    position: fixed;
+    left: 640px;
+    bottom: 260px;
+    width: 80px;
+    height: 80px;
+  }
+  .snum {
+    position: fixed;
+    left: 684px;
+    top: 732px;
+    width: 36px;
+    height: 22px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    background-color: #D62D2D
+  }
+}

@@ -1,0 +1,127 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+.at-button__wxbutton{
+    border-radius: 50%;
+}
+.pull-left{
+  float: left;
+}
+.pull-right{
+  float: right;
+}
+.clean-fix{
+  clear: both;
+}
+.emptyList{
+  width: 350px;
+  height: 393px;
+  position: absolute;
+  /*background-color: greenyellow;*/
+  left: 200px;
+  top: 270px;
+}
+//按钮清除默认样式
+
+button::after{
+  border:none;
+}
+input{
+  outline:none;
+  border:none;
+  list-style: none;
+}
+/*底部按钮*/
+/*中间*/
+.body{
+  width: 750px;
+  height: 366px;
+  /*background-color: yellow;*/
+  text-align: center;
+  //overflow: hidden;
+}
+.body1{
+  width: 100px;
+  height:100px;
+  margin-top: 62px;
+}
+.body2{
+  text-align:center;
+  margin:22px auto;
+}
+.body3{
+  width: 80%;
+  height:90px;
+  font-size:28px;
+  color:#999999;
+  line-height:30px;
+  margin:48px auto;
+  text-align: center;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  //background-color: gainsboro;
+}
+
+.foot-left{
+  width: 280px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #3176E7;
+  font-size: 36px;
+  float: left;
+  margin-left: 74px;
+  margin-top: 66px;
+  border: 1px solid #3176E7;
+  line-height: 80px;
+  font-weight:400;
+}
+.foot-right{
+  width: 280px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: #3176E7;
+  color: #fff;
+  font-size: 36px;
+  float: right;
+  margin-right: 74px;
+  margin-top: 66px;
+  line-height: 80px;
+  font-weight:600;
+}
+
+.bottom{
+  width: 650px;
+  height: 581px;
+  background-color: #EEEEEE;
+  font-size:34px;
+  /*font-family:PingFang-SC-Medium;*/
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  border-radius: 10px;
+  text-align: center;
+  line-height: 581px;
+  margin: 0 auto;
+  margin-top: 218px;
+
+}
+
+.at-swipe-action__options{
+  height: 100% !important;
+  border-radius: 0 6px 6px 0!important;
+  //align-items: stretch;
+}
+.at-swipe-action__option{
+  height: 100% !important;
+  border-radius: 0 6px 6px 0!important;
+}
+.at-swipe-action__content.animtion,at-swipe-action{
+  height: 200px;
+  box-sizing: border-box;
+}

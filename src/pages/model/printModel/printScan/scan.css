@@ -1,0 +1,25 @@
+.back{
+    width: 750px;
+    height: 1206px;
+    /*background-color: rgba(244,244,244,1);*/
+    /*overflow: hidden;*/
+    position: relative;
+}
+.chooseTask{
+    font-size: 34px;
+    color: #333333;
+    font-weight: 500;
+    margin: 12px 0 0 24px;
+}
+.resolve{
+    width: 750px;
+    height: 80px;
+    background-color: #3176E7;
+    color: white;
+    line-height: 80px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+}
