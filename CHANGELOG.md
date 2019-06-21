@@ -1,4 +1,19 @@
 
+
+<a name=""></a>
+# []() (2019-06-21)
+
+
+<a name="1.0.40"></a>
+## [1.0.40]() (2019-06-21)
+
+
+### Bug Fixes
+* ** pages: 高度变动态了修正**  ([4c0f117](http://192.168.0.3:8888/penglong/ewyb-front/commit/4c0f117))
+* ** pages: 订单列表，删除按钮加载顺序**  ([605e46a](http://192.168.0.3:8888/penglong/ewyb-front/commit/605e46a))
+
+
+
 <a name=""></a>
 # []() (2019-06-20)
 
@@ -10,10 +25,18 @@
 * ** pages: 处理中，请稍后**  ([3f48f30](http://192.168.0.3:8888/penglong/ewyb-front/commit/3f48f30))
 * ** pages: 图片打印不显示页码**  ([c80849c](http://192.168.0.3:8888/penglong/ewyb-front/commit/c80849c))
 * ** pages: 订单创建 componentDidMount => componentWillMount**  ([8dd374c](http://192.168.0.3:8888/penglong/ewyb-front/commit/8dd374c))
+* ** pages: 订单列表 componentDidMount => componentWillMount**  ([ebacec9](http://192.168.0.3:8888/penglong/ewyb-front/commit/ebacec9))
+
+
 
 
 ### Features
 * ** pages: OfficialAccount add**  ([5ae0a4](http://192.168.0.3:8888/penglong/ewyb-front/commit/5ae0a4))
+* ** pages: showIssues add**  ([adfb81f](http://192.168.0.3:8888/penglong/ewyb-front/commit/adfb81f))
+* ** pages: showIssues add**  ([3b305d2](http://192.168.0.3:8888/penglong/ewyb-front/commit/3b305d2))
+
+
+
 
 <a name=""></a>
 # []() (2019-06-19)

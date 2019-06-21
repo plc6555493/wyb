@@ -10,7 +10,6 @@ import { AtSwipeAction } from 'taro-ui'
 export default class History extends Taro.Component {
   constructor (props) {
     super(props)
-    this.state = {}
   }
 
   onOrderLeftClick (k) {
@@ -29,7 +28,10 @@ export default class History extends Taro.Component {
     this.props.onStopPropagation()
   }
   render () {
-    let { taskList, thisListDisplay, titleState, OPTIONS1, OPTIONS2 } = this.props
+    let { taskList, thisListDisplay, titleState, OPTIONS1, OPTIONS2, showIssues } = this.props
+
+    console.log('showIssues', showIssues)
+
     return (
       <View className='back_big'>
         {taskList && taskList.map((v, k) => {
@@ -69,9 +71,12 @@ export default class History extends Taro.Component {
                       <View className='time'>创建时间：{v.create_time}</View>
                     </View>
                   </View>
-                  <View className='issues-outer' onClick={this.onToIssues.bind(this, k)}>
-                    <Image className='issues' src={issues} />
-                  </View>
+                  {
+                    showIssues &&
+                    <View className='issues-outer' onClick={this.onToIssues.bind(this, k)}>
+                      <Image className='issues' src={issues} />
+                    </View>
+                  }
                 </AtSwipeAction>
                 : <View>
                   {/* 订单 */}
@@ -97,9 +102,12 @@ export default class History extends Taro.Component {
                       <View className='time'>创建时间：{v.create_time}</View>
                     </View>
                   </View>
-                  <View className='issues-outer' onClick={this.onToIssues.bind(this, k)}>
-                    <Image className='issues' src={issues} />
-                  </View>
+                  {
+                    showIssues &&
+                    <View className='issues-outer' onClick={this.onToIssues.bind(this, k)}>
+                      <Image className='issues' src={issues} />
+                    </View>
+                  }
                 </View>
               }
 

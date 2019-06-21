@@ -40,7 +40,7 @@ export default class HistoryOrder extends Component {
     }
   }
 
-  componentDidMount () {
+  componentWillMount () {
     ebSetTitleAndReturnState(self, '我的订单')
     self.filter(0)
     let token = ebGetLocalStorage('EB_TOKEN')
@@ -358,6 +358,7 @@ export default class HistoryOrder extends Component {
             handleSwipeClick={self.handleSwipeClick.bind(self)}
             onToIssues={self.onToIssues.bind(self)}
             onStopPropagation={self.onStopPropagation.bind(self)}
+            showIssues={false}
           />
 
         </View>
