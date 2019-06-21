@@ -12,11 +12,11 @@ export default class Index extends Component {
         super(props);
         self = this
         this.state = {
-            top_info: {status: false, color: '#ffffff', bgcolor: '#ff0000'},
+            topInfo: {status: false, color: '#ffffff', bgcolor: '#ff0000'},
             totalPrice:null,
-        } 
+        }
     }
-    
+
     //页面跳转
     toadv8(){
         ebNavigateTo('/model/advModel/advSubmit/index');

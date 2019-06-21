@@ -5,6 +5,7 @@ dist/
 .temp/
 .rn_temp
 .expo
+rn_temp
 yarn.lock
 node_modules
 project.config.json

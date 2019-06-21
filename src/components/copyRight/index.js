@@ -1,32 +1,27 @@
-import Taro from '@tarojs/taro';
-import {View, Text} from '@tarojs/components';
-import './index.scss';
-import {ebGetLocalStorageInit} from "../../utils";
+import Taro from '@tarojs/taro'
+import { View } from '@tarojs/components'
+import './index.scss'
+import { ebGetLocalStorageInit } from '../../utils'
 
-let self = null;
+let self = null
 
 class CopyRight extends Taro.Component {
-    constructor(props) {
-        super(props);
-        self = this;
-        this.state = {
-            user_version: '1.0.0',
-        }
-    }
+  constructor (props) {
+    super(props)
+    self = this
+  }
 
-    componentWillMount() {
-        let init = ebGetLocalStorageInit();
-        console.log(init)
-    }
+  componentWillMount () {
+    let init = ebGetLocalStorageInit()
+    console.log(init)
+  }
 
-    render() {
-        let {user_version} = this.state;
-        let {tabbar} = this.props;
-        return (
-            <View className={tabbar ? 'copyright-tabbar' : 'copyright'} style={{textAlign: 'center'}}>
-            </View>
-        )
-    }
+  render () {
+    let { tabbar } = self.props
+    return (
+      <View className={tabbar ? 'copyright-tabbar' : 'copyright'} style={{ textAlign: 'center' }} />
+    )
+  }
 }
 
 export default CopyRight

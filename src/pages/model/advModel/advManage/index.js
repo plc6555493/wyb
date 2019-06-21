@@ -355,7 +355,7 @@ export default class Manage extends Component {
 		//mock数据
 		let data = {};
 		let option = {data, method: 'get'}
-		ebRequest('/advManage', {mock: true, mock_index: 1}, (res) => {
+		ebRequest('/advManage', {mock: true, mockIndex: 1}, (res) => {
 			if (res.status) {
 				console.log(res);
 				orderList = res.data.orderList

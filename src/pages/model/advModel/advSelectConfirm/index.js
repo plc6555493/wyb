@@ -30,7 +30,7 @@ export default class Select extends Component {
 		super(props);
 		self = this;
 		this.state = {
-			top_info: {status: false, color: "#ffffff", bgcolor: "#ff0000"},
+			topInfo: {status: false, color: "#ffffff", bgcolor: "#ff0000"},
 			addnum: 0,
 			listSelect: [],
 			loginState: self.props.authState,
@@ -117,15 +117,15 @@ export default class Select extends Component {
 							}
 						}
 					  })
-					  	
+
 				}}/>
 
 				{/* 块2开始 */}
 				<View>
-					<AtToast 
+					<AtToast
 						isOpened= {self.state.dis}
 						duration= '1200'
-						text="未选择点位" 
+						text="未选择点位"
 						onClose={this.correct}
 						></AtToast>
 					<View className='float' onClick={self.state.pageData?this.toAdvConfireChoose:this.erro}>
@@ -140,7 +140,7 @@ export default class Select extends Component {
 				pageData==false&&
 				<PageData/>
 				}
-				
+
 			</View>
 		)
 	}

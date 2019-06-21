@@ -1,8 +1,8 @@
-import {handleActions} from 'redux-actions'
-import {accountInit} from './account'
+import { handleActions } from 'redux-actions'
+import { accountInit } from './account'
 
 const initialState = {
-};
+}
 
 export default handleActions({
 
@@ -14,15 +14,12 @@ export default handleActions({
  * 初步结论 被调者（即类似本文件的文件） 需要 import   accountInit toggleOpenManage
  */
 const initAppUpdate = (result, that) => async () => {
+  const { userInfo } = result
 
-	const {detail, userInfo} = result;
-
-	// 更新用户账户信息
-	that.props.dispatch(accountInit(userInfo, 'init'))
-
-};
-
-export {
-	initAppUpdate,
+  // 更新用户账户信息
+  that.props.dispatch(accountInit(userInfo, 'init'))
 }
 
+export {
+  initAppUpdate
+}

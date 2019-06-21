@@ -1,81 +1,76 @@
-import Taro from '@tarojs/taro';
-import {View, Text} from '@tarojs/components';
-import './index.scss';
-import {ebShowToast} from "../../utils";
+import Taro from '@tarojs/taro'
+import { View, Image } from '@tarojs/components'
+import './index.scss'
+import { ebShowToast } from '../../utils'
 
-
-let self = null;
+let self = null
 
 class PrintAss extends Taro.Component {
-	constructor(props) {
-		super(props);
-		self = this;
-	}
+  constructor (props) {
+    super(props)
+    self = this
+  }
 
+  toPrint (i) {
+    let url = ''
 
-	toPrint(i) {
+    let { dataList } = self.props
 
-		let url = '';
+    let { document, photo } = dataList
 
-		let {dataList} = this.props
+    switch (i) {
+      case 'photo':
 
-		let {document, photo} = dataList
+        if (photo.config.open) {
+          url = '/pages/model/printModel/printPhoto/index?data=' + JSON.stringify(photo)
+        } else {
+          ebShowToast('暂未开放')
+          return
+        }
 
-		switch (i) {
-			case 'photo':
+        break
+      case 'document':
 
-				if (photo.config.open) {
-					url = '/pages/model/printModel/printPhoto/index?data='+JSON.stringify(photo)
-				} else {
-					ebShowToast('暂未开放');
-					return
-				}
+        if (document.config.open) {
+          url = '/pages/model/printModel/printDocument/index?data=' + JSON.stringify(document)
+        } else {
+          ebShowToast('暂未开放')
+          return
+        }
+        break
+    }
+    url && Taro.navigateTo({
+      url
+    })
+  }
 
-				break;
-			case 'document':
+  render () {
+    let { printEntranceAss } = self.props
 
-				if (document.config.open) {
-					url = '/pages/model/printModel/printDocument/index?data='+JSON.stringify(document)
-				} else {
-					ebShowToast('暂未开放');
-					return
-				}
-				break;
-		}
-		url && Taro.navigateTo({
-			url
-		})
+    return (
+      <View className='middle'>
 
-	}
+        {
+          printEntranceAss && printEntranceAss.map((src, i) => {
+            return (
+              <View className='pic1' key={i}>
+                <Image className='demo-text-4' onClick={this.toPrint.bind(this, i)} src={src.src} />
+                <View className='title'>
+                  {src.title}
+                </View>
+                <View className='title_sub'>
+                  {src.title_sub}
+                </View>
 
-	render() {
-		let {printEntranceAss} = this.props
+              </View>
+            )
+          })
+        }
 
-		return (
-			<View className='middle'>
+      </View>
 
-				{
-					printEntranceAss && printEntranceAss.map((src, i) => {
-						return (
-							<View className='pic1' key={i}>
-								<Image className='demo-text-4' onClick={this.toPrint.bind(this, i)} src={src.src}>
-								</Image>
-								<View className='title'>
-									{src.title}
-								</View>
-								<View className='title_sub'>
-									{src.title_sub}
-								</View>
-
-							</View>
-						)
-					})
-				}
-
-			</View>
-
-		)
-	}
+    )
+  }
 }
 
 export default PrintAss

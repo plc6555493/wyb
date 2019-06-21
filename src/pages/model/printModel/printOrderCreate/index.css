@@ -1,145 +1,155 @@
-.back{
-    width: 750px;
-    height: 1183px;
-    background-color: #eeeeee;
-    box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
-}
-.backImg{
-    width: 710px;
-    height: 620px;
-    position: absolute;
-    margin: 20px;
-    box-shadow:0 4px 20px 0 rgba(27,33,31,0.2);
-}
-.order{
-    width: 710px;
-
-    margin: 20px;
-    position: absolute;
-    z-index: 999;
+.back {
+  width: 750px;
+  height: 1183px;
+  background-color: #eeeeee;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
 }
 
-.title{
-    width: 710px;
-    height: 88px;
-    font-size: 34px;
-    color: #999999;
-    /*border-bottom: 1px solid #EEEEEE;*/
-    margin: 0 auto;
-    line-height: 88px;
-    /*background-color: chartreuse;*/
+.backImg {
+  width: 710px;
+  height: 560px;
+  position: absolute;
+  margin: 20px;
+  box-shadow: 0 4px 20px 0 rgba(27, 33, 31, 0.2);
 }
-.pic{
-    width: 44px;
-    height: 38px;
-    margin-left: 26px;
-    margin-right: 16px;
-    float:left;
-    margin-top:24px;
-}
-.preview{
-    float:right;
-    margin-top:0rpx;
-    margin-right:16rpx;
-}
-.middle{
-    width: 710px;
-    height: 385px;
-    line-height: 78px;
-    padding: 0 30px 0 30px;
-    /*border-bottom: 1px dashed #999999;*/
-    font-size: 24px;
-    /*background-color: aqua;*/
-    margin: 0 auto;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-.middle View Text:first-child{
-    color: #333333;
-    /*float: left;*/
-}
-.middle View Text:last-child{
-    /*color: green;*/
-    float: right;
-    font-weight: bold;
-}
-.pointR{
-    font-weight:normal!important;
-}
-.typeR{
-    font-weight:normal!important;
-}
-.couponR{
-    color: #20D59E;
-    font-weight:normal!important;
-}
-.more{
-    display: inline-block;
-    color: #ccc!important;
-    margin-left: 15px;
-}
-.copiesR{
-    margin-right: 40px  ;
-}
-.change1{
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    position: absolute;
-    left: 505px;
-    top: 320px;
-    /*background-color: red;*/
-}
-.change2{
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    position: absolute;
-    left: 642px;
-    top: 320px;
-    /*background-color: red;*/
-
-}
-.inputNum{
-    width: 60px;
-    height: 50px;
-    position: absolute;
-    left: 575px;
-    top: 320px;
-    text-align: center;
-    /*background-color: red;*/
+.backImg660{
+  height: 660px;
 }
 
-.footer{
-    width: 710px;
-    height: 144px;
-    line-height: 65px;
-    /*background-color: gold;*/
-    font-size: 24px;
-    margin: 0 auto;
-    padding: 0 30px 0 30px;
-    box-sizing: border-box;
-}
-.footer View Text:first-child{
-    color: #333333;
-}
-.footer View Text:last-child{
-    /*color: darkorange;*/
-    float: right;
-    font-weight: bold;
+.order {
+  width: 710px;
+
+  margin: 20px;
+  position: absolute;
+  z-index: 999;
 }
 
-.toPay{
-    width: 750px;
-    height: 80px;
-    font-size: 34px;
-    color: #FFFFFF;
-    text-align: center;
-    line-height: 80px;
-    background-color: #3176E7;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+.title {
+  width: 710px;
+  height: 88px;
+  font-size: 34px;
+  color: #999999;
+  /*border-bottom: 1px solid #EEEEEE;*/
+  margin: 0 auto;
+  line-height: 88px;
+  /*background-color: chartreuse;*/
+}
+
+.pic {
+  width: 44px;
+  height: 38px;
+  margin-left: 26px;
+  margin-right: 16px;
+  float: left;
+  margin-top: 24px;
+}
+
+.previewContainer{
+  float:right;
+  width:15%;
+  text-align:center;
+}
+
+.preview {
+  margin-top:10px;
+  height: 50px;
+  width: 50px;
+}
+
+.middle {
+  width: 710px;
+  line-height: 80px;
+  padding: 0 30px 0 30px;
+  /*border-bottom: 1px dashed #999999;*/
+  font-size: 24px;
+  /*background-color: aqua;*/
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.middle View Text:first-child {
+  color: #333333;
+  /*float: left;*/
+}
+
+.middle View Text:last-child {
+  /*color: green;*/
+  float: right;
+  font-weight: bold;
+}
+
+.pointR {
+  font-weight: normal !important;
+}
+
+.typeR {
+  font-weight: normal !important;
+}
+
+.couponR {
+  color: #20D59E;
+  font-weight: normal !important;
+}
+
+.more {
+  display: inline-block;
+  color: #ccc !important;
+  margin-left: 15px;
+}
+
+.copiesNum{
+  float:right;
+  text-align: center;
+  height:40px;
+  line-height:40px;
+  padding-top:6px;
+}
+
+.change1 {
+  width: 40px;
+  height: 40px;
+}
+.inputNum {
+  width: 60px;
+  display:inline-block;
+}
+.change2 {
+  width: 40px;
+  height: 40px;
+}
+
+.footer {
+  width: 710px;
+  height: 144px;
+  line-height: 80px;
+  font-size: 24px;
+  margin: 0 auto;
+  padding: 0 30px 0 30px;
+  box-sizing: border-box;
+}
+
+.footer View Text:first-child {
+  color: #333333;
+}
+
+.footer View Text:last-child {
+  /*color: darkorange;*/
+  float: right;
+  font-weight: bold;
+}
+
+.toPay {
+  width: 750px;
+  height: 80px;
+  font-size: 34px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 80px;
+  background-color: #3176E7;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }

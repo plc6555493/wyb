@@ -34,12 +34,12 @@ export default class Select extends Component {
 		super(props);
 		self = this;
 		this.state = {
-			top_info: {status: false, color: "#ffffff", bgcolor: "#ff0000"},
+			topInfo: {status: false, color: "#ffffff", bgcolor: "#ff0000"},
 			addnum: 0,
 			listSelect: [],
 			loginState: self.props.authState,
 			// selector1省份列表
-			selector1: [],    
+			selector1: [],
 			selectorChecked1: '江苏省',
 			// selectors2所有的城市列表
 			selectors2:[],
@@ -53,20 +53,20 @@ export default class Select extends Component {
 			dis:false
 		}
 	}
-	
+
 	componentDidMount() {
 
 		let {addnum,} = self.state
 		let data = {};
 		let option = {data, method: 'get'}
 		ebSetTitleAndReturnState(self);
-		ebRequest('/select', {mock: true,mock_index:0}, (res) => {
+		ebRequest('/select', {mock: true,mockIndex:0}, (res) => {
 			let tempList = res.list.filter((value, index, arr) => {
 				return value.checked
-				
+
 			})
 			if(res.list){
-				
+
 				self.setState({
 					pageData : true
 				},()=>{console.log('pageData='+self.state.pageData)})
@@ -77,8 +77,8 @@ export default class Select extends Component {
 				console.log('list='+self.state.listSelect.length),
 				ebSetLocalStorage('EB_LIST_SELECT2',self.state.listSelect)
 			))
-			
-			
+
+
 		}),
 			// 获取城市
 			ebRequest('/common/' + API_V1 + 'city',option, function (res) {
@@ -106,8 +106,8 @@ export default class Select extends Component {
 					if(JSON.parse(listSelect_1)[n]['id']==listSelect_2[i]['id']){
 						console.log('进入'+i)
 						listSelect_2[i]['checked']= false
-					} 
-						
+					}
+
 				}
 			}
 		}
@@ -153,7 +153,7 @@ export default class Select extends Component {
 		self.setState({dis:false})
 	}
 
-	
+
 	// 省份点击方法
 	onChange1 = e => {
 		let {index1,selector2,selectors2,selectorChecked2} = self.state
@@ -171,7 +171,7 @@ export default class Select extends Component {
 	// 城市点击方法
 	onChange2 = e => {
 		// 提交城市名称，发送请求，获取当前城市的点位信息
-		ebRequest('/select', {mock: true,mock_index:0},function (res) {
+		ebRequest('/select', {mock: true,mockIndex:0},function (res) {
 			console.log(res.status)
 			if (res.status===true) {
 				console.log('成功')
@@ -183,7 +183,7 @@ export default class Select extends Component {
 	}
 
 
-	
+
 
 	render() {
 
@@ -191,7 +191,7 @@ export default class Select extends Component {
 		let {authState, scene} = self.props
 		return (
 			<View className='index'>
-				
+
 				<View className='head'>
 					{/* 省份选择 */}
 					<Picker mode='selector' range={this.state.selector1} onChange={this.onChange1} >
@@ -200,7 +200,7 @@ export default class Select extends Component {
 						</View>
 						<Image className='down1' src={down} />
 					</Picker>
-					
+
 					{/* 城市选择 */}
 					<Picker mode='selector' range={this.state.selector2} onChange={this.onChange2}>
 						<View className='city'>
@@ -234,10 +234,10 @@ export default class Select extends Component {
 				{/* 块2开始 */}
 				<View>
 					{/* 轻提示 */}
-					<AtToast 
+					<AtToast
 					isOpened= {self.state.dis}
 					duration= '1200'
-					text="未选择点位" 
+					text="未选择点位"
 					onClose={this.correct}
 					></AtToast>
 					<Image className='sel' src={sel} onClick={this.toAdvSelectConfirm}></Image>

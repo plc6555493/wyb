@@ -5,22 +5,14 @@ import {API_V1, ebGetLocalStorage, ebGetRouterParams, ebReLaunch, ebRequest, ebS
 import greenHook from "../../../../asset/image/greenHook.png"
 
 
-export default class PayFinish extends Component {
+ class PayFinish extends Component {
     constructor(props) {
         super(props);
     }
 
     componentDidMount() {
         ebSetTitleAndReturnState(this);
-
     }
-
-    componentDidShow() {
-    }
-
-    componentDidHide() {
-    }
-
 
     scan(){
     		ebScanCode((res1)=>{

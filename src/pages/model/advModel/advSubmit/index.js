@@ -14,16 +14,16 @@ export default class Index extends Component {
         super(props);
         self = this
         this.state = {
-            top_info: {status: false, color: '#ffffff', bgcolor: '#ff0000'},
+            topInfo: {status: false, color: '#ffffff', bgcolor: '#ff0000'},
             //input文本框件提示内容
             placeholder1:'请选择要上传的图片',
             placeholder2:'请选择要上传的视频',
 
-            
+
 
             //图片选择按钮组模块
             s1:'display:none',
-            
+
             btn5s1:'border-color: #dddddd;',
             btn15s1:'border-color: #dddddd;',
             btn30s1:'border-color: #dddddd;',
@@ -51,9 +51,9 @@ export default class Index extends Component {
 
             picBtn2s1:'border-color: #dddddd;',
 
-        } 
+        }
     }
-    
+
 
     //页面跳转
     todemo9(){
@@ -81,7 +81,7 @@ export default class Index extends Component {
             btnOther11:'border-color: #dddddd;',
             [str1]:'border-color: #3176E7;color: #FFFFFF;background-color: #3176E7;',
         })
-        
+
     }
 
     select2(str1,event){
@@ -93,7 +93,7 @@ export default class Index extends Component {
             btnOther21:'border-color: #dddddd;',
             [str1]:'border-color: #3176E7;color: #FFFFFF;background-color: #3176E7;',
         })
-        
+
     }
 
 
@@ -118,7 +118,7 @@ export default class Index extends Component {
             btnOther12:'border-color: #dddddd;',
             [str1]:'border:1px solid #3176E7;color: #FFFFFF;background-color: #3176E7;',
         })
-        
+
     }
 
     select4(str1,event){
@@ -130,7 +130,7 @@ export default class Index extends Component {
             btnOther22:'border-color: #dddddd;',
             [str1]:'border:1px solid #3176E7;color: #FFFFFF;background-color: #3176E7;',
         })
-        
+
     }
 
     //上传图片广告
@@ -193,7 +193,7 @@ export default class Index extends Component {
     onReachBottom = () => {
     }
 
-    
+
     render() {
 
         return (
@@ -274,7 +274,7 @@ export default class Index extends Component {
                     </View>
 
                     <View><Text>\n</Text></View>
-                    
+
                     <View className='txt1'>选择播放时长</View>
                     <View><Text>\n</Text></View>
                     {/* 行：按钮5秒、15秒、30秒、其他 */}
@@ -304,9 +304,9 @@ export default class Index extends Component {
                 </View>
                 {/* <View id='componentOne'>
                     <CopyRight tabbar={true}/>
-                </View> */}   
+                </View> */}
             </View>
-            
+
         )
     }
 }

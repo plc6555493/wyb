@@ -1,26 +1,19 @@
-import Taro from '@tarojs/taro';
-import {View, Text} from '@tarojs/components';
-import './index.scss';
-import defau from '../../asset/image/emptyList.png'
-
-
-
-let self = null;
+import Taro from '@tarojs/taro'
+import { View, Image } from '@tarojs/components'
+import './index.scss'
+import emptyList from '../../asset/image/emptyList.png'
 
 class PageData extends Taro.Component {
-    constructor(props) {
-        super(props);
-        self = this;
-    }
+  constructor (props) {
+    super(props)
+  }
 
-    componentWillMount() {
-    }
-
-    render() {
-        return (
-            <Image className='defaultPage' src={defau}>
-            </Image>
-        )
-    }
+  render () {
+    return (
+      <View>
+        <Image className='defaultPage' src={emptyList} />
+      </View>
+    )
+  }
 }
 export default PageData

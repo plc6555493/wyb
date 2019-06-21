@@ -1,0 +1,14 @@
+<image-cropper angle="{{angle}}" bindimageload="loadimage" bindload="cropperload" bindtapcut="clickcut" disable_height="{{disable_height}}" disable_ratio="{{disable_ratio}}" disable_rotate="{{disable_rotate}}" disable_width="{{disable_width}}" export_scale="{{export_scale}}" height="{{height}}" id="image-cropper" imgSrc="{{src}}" limit_move="{{limit_move}}" max_height="{{max_height}}" max_scale="{{3}}" max_width="{{max_width}}" width="{{width}}"></image-cropper>
+<text class="hint">{{hint}}</text>
+<view class="cropper_bottom">
+
+   <view class="cropper_bottom_button">
+
+     <image  style="width: 40px; height: 40px; padding: 20px" catchtouchend="end" catchtouchstart="rotate" data-type="rotate" src="{{imageRotate}}"></image>
+     <image  style="width: 40px; height: 40px; padding: 20px" catchtouchend="end" catchtouchstart="rotate" data-type="rotateInverted" src="{{imageRotate1}}"></image>
+
+   </view>
+
+    <button bindtap="submit" class="btnSubmit">确定上传</button>
+
+</view>

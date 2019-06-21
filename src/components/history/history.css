@@ -14,7 +14,7 @@
     box-sizing: border-box;
     /*border: 1px solid #000;*/
     /*padding: 5px;*/
-    box-shadow: 0 6px 32px rgba(0,0,0,.1);
+    box-shadow: 0 0 32px rgba(0,0,0,.1);
 
 }
 .orderBack{
@@ -28,7 +28,7 @@
     /*padding: 5px;*/
     border-radius: 6px;
     /*border: 1px solid #000;*/
-    background-color: rgba(0,0,0,.07);
+    /*background-color: rgba(0,0,0,.07);*/
 }
 
 .left{
@@ -72,40 +72,81 @@
     top: 0;
     right: 0;
     overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
-.right View:first-child{
+
+.right-first{
     /*background-color: tan;*/
     width: 460px;
-    height: 37px;
+    height: 25px;
     font-size: 26px;
     color: #999999;
-    margin: 0 auto;
-    margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+    /*margin: 0 auto;*/
+    /*margin-top: 30px;*/
 }
 .right View Text:last-child{
     /*background-color: greenyellow;*/
     /*color: #FFCC1D;*/
-    float: right;
+    /*float: right;*/
 }
-.right View:nth-child(2){
+.right-second{
     /*background-color: yellow;*/
     width: 460px;
     height: 37px;
     font-size: 48px;
     color: #333333;
-    margin: 0 auto;
-    margin-top: 10px;
+    /*margin: 0 auto;*/
+    /*margin-top: 10px;*/
 
 }
-.right View:nth-child(3){
+.right-third{
     /*background-color: skyblue;*/
     width: 460px;
-    height: 25px;
-    font-size: 26px;
-    color: #999999;
-    margin: 30px auto;
-}
+    height: 50px;
 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+    /*margin-left: 30px;*/
+  /*display: inline-block;*/
+}
+.time{
+  font-size: 20px;
+  color: #999999;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  /*background-color: indigo;*/
+}
+.issues-outer{
+  width: 48px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 625px;
+  top: 136px;
+}
+.issues{
+  width: 35px;
+  height: 36px;
+  /*position: absolute;*/
+  /*top: 144px;*/
+  /*left: 635px;*/
+  /*display: inline-block;*/
+  /*background-color: red;*/
+
+}
 
 .status1{
     color: #20D59E;

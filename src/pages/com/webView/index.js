@@ -1,42 +1,38 @@
-import Taro, {Component} from '@tarojs/taro'
-import {View, Button} from '@tarojs/components'
+import Taro from '@tarojs/taro'
+import { View, WebView } from '@tarojs/components'
 import './index.scss'
-import {ebGetRouterParams, ebSetTitleAndReturnState} from '../../../utils';
+import { ebGetRouterParams, ebSetTitleAndReturnState } from '../../../utils'
 
 let self
 
-export default class Index extends Component {
-	constructor(props) {
-		super(props)
-		self = this
-		self.state = {
-			params: {
-				ebsrc: null,
-			}
-		}
-	}
+export class Index extends Taro.Component {
+  constructor (props) {
+    super(props)
+    self = this
+    self.state = {
+      params: {
+        ebsrc: null
+      }
+    }
+  }
 
-	componentWillMount() {
-		let params = ebGetRouterParams(this);
-		console.log('获得地址栏参数:', params)
-		self.setState({params})
-	}
+  componentWillMount () {
+    let params = ebGetRouterParams(this)
+    self.setState({ params })
+    console.log('page webview will mount')
+  }
 
-	componentDidMount() {
-		ebSetTitleAndReturnState(self);
-	}
+  componentDidMount () {
+    ebSetTitleAndReturnState(self)
+  }
 
+  render () {
+    let { ebsrc } = self.state.params
 
-	render() {
-
-		let {params} = self.state
-		let {ebsrc} = params
-
-		return (
-			<View>
-				<web-view src={"https://web.ewyb.cn/preview?t0=pdf&u0="+ebsrc}></web-view>
-			</View>
-		)
-	}
+    return (
+      <View>
+        <WebView src={ebsrc} />
+      </View>
+    )
+  }
 }
-

@@ -112,16 +112,13 @@ input{
 
 }
 
-.at-swipe-action__options{
-  height: 100% !important;
-  border-radius: 0 6px 6px 0!important;
-  //align-items: stretch;
+.at-swipe-action__options,.at-swipe-action__option{
+  border-radius: 0 10px 10px 0!important;
 }
-.at-swipe-action__option{
-  height: 100% !important;
-  border-radius: 0 6px 6px 0!important;
-}
+
 .at-swipe-action__content.animtion,at-swipe-action{
   height: 200px;
-  box-sizing: border-box;
+}
+.at-swipe-action__content{
+  background-color: rgba(255,255,255,0)!important;
 }

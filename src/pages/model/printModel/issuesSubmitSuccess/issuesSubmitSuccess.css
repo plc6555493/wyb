@@ -1,0 +1,35 @@
+/*头部*/
+.head{
+    width: 750px;
+    height: 80px;
+}
+.head-left{
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 16px 64px rgba(0,0,0,0.3);
+}
+.head-right{
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin-right: 30px;
+    margin-top: 16px;
+}
+.foot-inner{
+  width: 280px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #3176E7;
+  font-size: 36px;
+  margin: 0 auto;
+  margin-top: 66px;
+  border: 1px solid #3176E7;
+  line-height: 80px;
+  font-weight:400;
+}

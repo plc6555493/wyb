@@ -22,12 +22,12 @@ export default class Index extends Component {
 			totalPrice: '8999.99',
 		}
 	}
-	
+
 	//页面跳转
 	toadv7() {
 		//使用totalPrice之前要先对数据进行解构，因为totalPrice是一个对象，此处取totalPrice中的值
 		let {totalPrice}=self.state
-	
+
 		ebNavigateTo('/model/advModel/advPaySuccess/index?totalPrice=' + totalPrice);
 	}
 
@@ -70,15 +70,15 @@ export default class Index extends Component {
 		//手动模拟数据
 
 		//mock自动模拟数据
-		//mock_index:2为'../../../../utils'路径下mock_api选择第三个API_MOCK_ZC
-		// ebRequest('/pointBase', {mock: true,mock_index:2}, (res) => {
+		//mockIndex:2为'../../../../utils'路径下mock_api选择第三个API_MOCK_ZC
+		// ebRequest('/pointBase', {mock: true,mockIndex:2}, (res) => {
 		// 	let pointListBase = res.data.list
 		// 	// 将空的转换为包含上面参数的对象
 		// 	self.setState(
 		// 		{pointListBase}
 		// 	)
 		// }),
-		// ebRequest('/pointExtra', {mock: true,mock_index:2}, (res) => {
+		// ebRequest('/pointExtra', {mock: true,mockIndex:2}, (res) => {
 		// 	let pointListExtra = res.data.list
 		// 	// 将空的转换为包含上面参数的对象
 		// 	self.setState(
@@ -87,7 +87,7 @@ export default class Index extends Component {
 		// })
 		//mock自动模拟数据
 		//mock自动模拟数据1
-		ebRequest('/point', {mock: true,mock_index:2}, (res) => {
+		ebRequest('/point', {mock: true,mockIndex:2}, (res) => {
 			let pointListBase = res.data.list.filter((value, index, arr) => {
 				if(value.sid <= 10)
 				return value
@@ -124,7 +124,7 @@ export default class Index extends Component {
 						<View>
 							<PointBase pointList={pointListBase} />
 						</View>
-						
+
 					</View>
 					<View className='viewLine1'></View>
 					{/* 行：额外点位 */}
