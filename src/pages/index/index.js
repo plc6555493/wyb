@@ -3,7 +3,7 @@ import { View, Image, Swiper, SwiperItem, OfficialAccount } from '@tarojs/compon
 import { connect } from '@tarojs/redux'
 import { bindActionCreators } from 'redux'
 import './index.scss'
-import { AtDrawer, AtButton, AtList, AtAvatar, AtSwipeAction, AtListItem } from 'taro-ui'
+import { AtDrawer, AtButton, AtList, AtAvatar, AtSwipeAction, AtListItem, AtActivityIndicator } from 'taro-ui'
 import { ebSetTitleAndReturnState, ebRequest, API_V1, ebNavigateTo, ebScanCode } from '../../utils'
 import codPng from '../../asset/image/code.png'
 import PrintAss from '../../components/homePage'
@@ -27,9 +27,10 @@ class Index extends Component {
     super(props)
     self = this
     self.state = {
+      loading: true,
       leftDrawerShow: false,
       printEntrance: [],
-      version: 'V1.0.39',
+      version: 'V1.0.5',
       showOfficeAccount: false
     }
   }
@@ -51,7 +52,7 @@ class Index extends Component {
         let { index } = res.data
         let conf = index
         let { banner, entryAdv, entryPrint } = index.images
-        self.setState({ printEntrance: entryPrint, bannerList: banner, entryAdv, conf: conf, dataList: res.data })
+        self.setState({ loading: false, printEntrance: entryPrint, bannerList: banner, entryAdv, conf: conf, dataList: res.data })
       }
     })
   }
@@ -138,7 +139,7 @@ class Index extends Component {
   }
 
   render () {
-    let { printEntrance, bannerList, entryAdv, conf, leftDrawerShow, version, dataList, showOfficeAccount } = self.state
+    let { printEntrance, bannerList, entryAdv, conf, leftDrawerShow, version, dataList, showOfficeAccount, loading } = self.state
     let { authState, scene } = self.props
     let animShow = true
     let styleVersion = {
@@ -216,10 +217,12 @@ class Index extends Component {
 
         <View className='neck'>
           <Swiper
-            className='test-h'
+            className='swiper'
             indicatorColor='#999999'
             indicatorActiveColor='#CCCCCC'
             circular
+            duration='500'
+            interval='2000'
             indicatorDots
             displayMultipleItems
             autoplay>
@@ -235,10 +238,12 @@ class Index extends Component {
           </Swiper>
         </View>
 
-        <PrintAss printEntranceAss={printEntrance} dataList={dataList} />
         {
-          conf['config']['showMorePrint'] &&
-            <ShowMore />
+          loading ? <AtActivityIndicator mode='center' content='Loading...' />
+            : <View>
+              <PrintAss printEntranceAss={printEntrance} dataList={dataList} /> {conf['config']['showMorePrint'] &&
+              <ShowMore />}
+            </View>
         }
 
         {/* 进入广告页面的跳转入口 */}

@@ -2,17 +2,26 @@ import { Component } from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
 import './historyOrder.css'
 import History from '../../../../components/history/history.js'
-import { API_V1, ebGetLocalStorage, ebPay, ebRequest, ebScanCode, ebSetTitleAndReturnState, ebShowModal, ebShowToast, ebPrintTaskCreate, ebFilePreview, orderPrintUpdate, ebNavigateTo } from '../../../../utils'
+import { API_V1, ebGetLocalStorage, ebPay, ebRequest, ebScanCode, ebSetTitleAndReturnState, ebShowModal, ebShowToast, ebPrintTaskCreate, ebFilePreview, orderPrintUpdate, ebNavigateTo, ebShowNavigationBarLoading, ebHideNavigationBarLoading, ebStopPullDownRefresh, ebShowLoading, ebHideLoading } from '../../../../utils'
 import emptyList from '../../../../asset/image/emptyList.png'
 import { AtActivityIndicator } from 'taro-ui'
 
 let self = null
 
 export default class HistoryOrder extends Component {
+  config = {
+    enablePullDownRefresh: true
+  };
+
   constructor (props) {
     super(props)
     self = this
     this.state = {
+      orderState: '',
+      curPage: 1,
+      pageSize: 5,
+      haveNoMore: false,
+      isPullDown: false,
       loading: true,
       taskList: [],
       title: [],
@@ -43,23 +52,88 @@ export default class HistoryOrder extends Component {
   componentWillMount () {
     ebSetTitleAndReturnState(self, '我的订单')
     self.filter(0)
+    self.getList()
+  };
+
+  /**
+   */
+  getList (refresh = false, options = {}) {
+    console.log('refresh', refresh)
+
+    let {} = options
+
+    ebShowNavigationBarLoading()
+
     let token = ebGetLocalStorage('EB_TOKEN')
+    let { curPage, pageSize, taskList, orderState } = this.state
+    curPage = refresh ? 1 : curPage
+
     let data = {}
+    data['curPage'] = curPage
+    data['pageSize'] = pageSize
+    data['title'] = 1
+
+    if (orderState !== '' && orderState !== undefined) {
+      data['order_state'] = orderState
+    }
+
     let option = { data, token, method: 'get' }
     ebRequest('/wxmin/' + API_V1 + 'order/', option, function (res) {
       if (res.status) {
+        ebStopPullDownRefresh()
+        ebHideNavigationBarLoading()
+        ebHideLoading()
         console.log('返回参数', res.data)
-        let { title, list, title_state: titleState } = res.data
-
+        let { title, list, title_state: titleState, title_state_key: titleStateKey } = res.data
+        taskList = refresh ? list : taskList.concat(list)
         self.setState({
+          curPage: ++curPage,
+          isPullDown: false,
           loading: false,
+          showLoading: false,
           title: title,
           titleState,
-          taskList: list
+          titleStateKey,
+          taskList,
+          haveNoMore: pageSize > list.length && taskList.length > 0
         })
+        console.log('taskList length: ' + taskList.length)
       }
     })
-  };
+  }
+
+  // 页面上拉触底事件的处理函数
+  // 可以在app.json的window选项中或页面配置中设置触发距离onReachBottomDistance。
+  // 在触发距离内滑动期间，本事件只会被触发一次。
+  // 小程序的 onReachBottom 事件不能在350ms之内频繁触发 也就是说它有350ms的频率限制
+  onReachBottom = () => {
+    const { showLoading, haveNoMore } = this.state
+    setTimeout(function () {
+      console.log('onReachBottom showLoading ', showLoading)
+      if (!showLoading && !haveNoMore) {
+        ebShowLoading('加载中...', true)
+        self.setState({ showLoading: true }, () => {
+          self.getList()
+        })
+      }
+    }, 500)
+  }
+
+  onPullDownRefresh () {
+    console.log('小程序专有 监听用户下拉动作')
+
+    const { isPullDown } = this.state
+    console.log('onPullDownRefresh isPullDown ', isPullDown)
+    if (!isPullDown) {
+      self.setState({ isPullDown: true }, () => {
+        this.getList(true)
+      })
+    }
+  }
+
+  componentDidShow () {
+    this.getList(true)
+  }
 
   /**
    *
@@ -67,8 +141,8 @@ export default class HistoryOrder extends Component {
    * @param osd
    */
   listShowUpdate = (k, osd) => {
-    let { chooseTitle, taskList } = this.state
-    let thisList = 0
+    let { chooseTitle } = this.state
+
     let titleKey = k
     self.setState({
       thisListDisplay: 'display:none',
@@ -81,40 +155,12 @@ export default class HistoryOrder extends Component {
         chooseTitle[j].choose = ''
       }
     }
-    for (let i = 0; i < taskList.length; i++) {
-      if (taskList[i].order_state === osd) {
-        thisList++
-        if (thisList > 0) {
-          self.setState({
-            thisListDisplay: 'display:none'
-          })
-        } else {
-          self.setState({
-            thisListDisplay: 'display:block'
-          })
-        }
-        taskList[i].filterOrder = 'display:block'
-        self.setState({
-          taskList: taskList,
-          chooseTitle
 
-        })
-      } else {
-        if (thisList === 0) {
-          self.setState({
-            thisListDisplay: 'display:block'
-          })
-        } else {
-          self.setState({
-            thisListDisplay: 'display:none'
-          })
-        }
-        taskList[i].filterOrder = 'display:none'
-        self.setState({
-          taskList: taskList
-        })
-      }
-    }
+    self.setState({
+      orderState: osd
+    }, () => {
+      self.getList(true)
+    })
   }
 
   /**
@@ -125,54 +171,7 @@ export default class HistoryOrder extends Component {
     console.log(k)
     // 列表更新显示函数
     if (k === 0) {
-      let { taskList, chooseTitle, titleKey } = this.state
-      let thisList = 0
-      titleKey = k
-      self.setState({
-        thisListDisplay: 'display:none',
-        titleKey
-      })
-      for (let j = 0; j < chooseTitle.length; j++) {
-        if (j === k) {
-          chooseTitle[j].choose = 'choose'
-        } else {
-          chooseTitle[j].choose = ''
-        }
-      }
-      for (let i = 0; i < taskList.length; i++) {
-        if (taskList[i].order_state !== '60') {
-          thisList++
-          if (thisList > 0) {
-            self.setState({
-              thisListDisplay: 'display:none'
-            })
-          } else {
-            self.setState({
-              thisListDisplay: 'display:block'
-            })
-          }
-          taskList[i].filterOrder = 'display:block'
-          self.setState({
-            taskList: taskList,
-            chooseTitle
-
-          })
-        } else {
-          if (thisList === 0) {
-            self.setState({
-              thisListDisplay: 'display:block'
-            })
-          } else {
-            self.setState({
-              thisListDisplay: 'display:none'
-            })
-          }
-          taskList[i].filterOrder = 'display:none'
-          self.setState({
-            taskList: taskList
-          })
-        }
-      }
+      self.listShowUpdate(k, '')
     } else if (k === 1) {
       self.listShowUpdate(k, '40')
     } else if (k === 2) {
@@ -309,18 +308,27 @@ export default class HistoryOrder extends Component {
         break
     }
   }
+
   onToIssues (k) {
     let { taskList } = self.state
     console.log(taskList[k])
     let sn = taskList[k].order_sn
     ebNavigateTo('/model/printModel/issues/issues?sn=' + sn)
   }
+
   onStopPropagation (e) {
     e.stopPropagation()
   }
 
   render () {
-    let { taskList, date, title, chooseTitle, thisListDisplay, titleState, loading, OPTIONS1, OPTIONS2 } = self.state
+    let {
+      taskList, title, chooseTitle, thisListDisplay,
+      titleState, loading, OPTIONS1, OPTIONS2, showLoading, curPage, haveNoMore
+    } = self.state
+
+    console.log('curPage', curPage)
+    console.log('haveNoMore', haveNoMore)
+    console.log('showLoading', showLoading)
 
     return (
 
@@ -330,7 +338,7 @@ export default class HistoryOrder extends Component {
           <View className='title'>
             <View className='title_inner'>
               {
-                title.map((v, k) => {
+                title && title.map((v, k) => {
                   k === 0 ? chooseTitle.push({ choose: 'choose' }) : chooseTitle.push({ choose: '' })
 
                   return (
@@ -344,13 +352,9 @@ export default class HistoryOrder extends Component {
               }
             </View>
           </View>
-          <Image className='emptyList'
-            src={emptyList}
-            style={taskList.length > 0 ? thisListDisplay : { display: 'block' }}
-          />
+
           <History taskList={taskList}
             titleState={titleState}
-            date={date}
             OPTIONS1={OPTIONS1}
             OPTIONS2={OPTIONS2}
             onOrderRightClick={self.handleOrderRightClick.bind(self)}
@@ -359,8 +363,13 @@ export default class HistoryOrder extends Component {
             onToIssues={self.onToIssues.bind(self)}
             onStopPropagation={self.onStopPropagation.bind(self)}
             showIssues={false}
+            showLoading={showLoading}
+            haveNoMore={haveNoMore}
           />
 
+          <Image className='emptyList'
+            src={emptyList}
+            style={taskList.length > 0 ? thisListDisplay : { display: 'block' }} />
         </View>
     )
   }

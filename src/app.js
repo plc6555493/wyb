@@ -65,10 +65,10 @@ class App extends Component {
       'pages/model/printModel/issuesSubmitSuccess/issuesSubmitSuccess'
     ],
     window: {
+      backgroundColor: '#3176e7',
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: 'white',
       navigationBarTextStyle: 'black'
-
     },
     navigateToMiniProgramAppIdList: [],
     permission: {

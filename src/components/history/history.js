@@ -6,10 +6,16 @@ import pic1 from '../../asset/image/printOrder.png'
 import pic2 from '../../asset/image/printPhoto.png'
 import issues from '../../asset/image/issues.png'
 import { AtSwipeAction } from 'taro-ui'
+import Loading from '../loading'
 
+let self = null
 export default class History extends Taro.Component {
   constructor (props) {
     super(props)
+    self = this
+    self.state = {
+      showOrderBack: false
+    }
   }
 
   onOrderLeftClick (k) {
@@ -27,10 +33,18 @@ export default class History extends Taro.Component {
   onStopPropagation () {
     this.props.onStopPropagation()
   }
+  onLoadOrderBack (a, b) {
+    self.setState(
+      {
+        showOrderBack: true
+      }
+    )
+  }
   render () {
-    let { taskList, thisListDisplay, titleState, OPTIONS1, OPTIONS2, showIssues } = this.props
+    let showLoadingTitle = '加载中...'
 
-    console.log('showIssues', showIssues)
+    let { showOrderBack } = self.state
+    let { taskList, thisListDisplay, titleState, OPTIONS1, OPTIONS2, showIssues, showLoading, haveNoMore } = this.props
 
     return (
       <View className='back_big'>
@@ -49,7 +63,9 @@ export default class History extends Taro.Component {
                     : (v.order_state === '0' || v.order_state === '40' ? OPTIONS2 : null)}>
 
                   {/* 订单 */}
-                  <Image className='orderBack' src={orderBack} />
+                  <Image className='orderBack' src={orderBack}
+                    onLoad={this.onLoadOrderBack.bind(this)}
+                    style={{ backgroundColor: showOrderBack ? 'rgba(0,0,0,.07)' : '#fff' }} />
                   <View className='left' onClick={this.onOrderLeftClick.bind(this, k)}>
                     <Text className={v.order_state === '40' ? 'statusL1'
                       : (v.order_state === '10' ? 'statusL2' : (v.order_state === '0' ? 'statusL3' : null))} />
@@ -80,7 +96,10 @@ export default class History extends Taro.Component {
                 </AtSwipeAction>
                 : <View>
                   {/* 订单 */}
-                  <Image className='orderBack' src={orderBack} />
+                  <Image className='orderBack' src={orderBack}
+                    onLoad={this.onLoadOrderBack.bind(this)}
+                    style={{ backgroundColor: showOrderBack ? 'rgba(0,0,0,.07)' : '#fff' }} />
+
                   <View className='left' onClick={this.onOrderLeftClick.bind(this, k)}>
                     <Text className={v.order_state === '40' ? 'statusL1'
                       : (v.order_state === '10' ? 'statusL2' : (v.order_state === '0' ? 'statusL3' : null))} />
@@ -110,11 +129,14 @@ export default class History extends Taro.Component {
                   }
                 </View>
               }
-
             </View>
           )
         })}
-
+        <Loading
+          showLoading={showLoading}
+          showLoadingTitle={showLoadingTitle}
+          haveNoMore={haveNoMore}
+        />
       </View>
     )
   }

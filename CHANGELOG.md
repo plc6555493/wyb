@@ -1,17 +1,31 @@
+<a name=""></a>
+# []() (2019-06-22)
 
+
+<a name="1.0.4"></a>
+## [1.0.5]() (2019-06-22)
 
 <a name=""></a>
-# []() (2019-06-21)
+# []() (2019-06-22)
+### Bug Fixes
+* ** pages: 文字更新**  ([bc1495f](http://192.168.0.3:8888/penglong/ewyb-front/commit/bc1495f))
+* ** pages: previewImg remove**  ([c6075a9](http://192.168.0.3:8888/penglong/ewyb-front/commit/c6075a9))
+* ** pages: 文字样式统一**  ([921d25d](http://192.168.0.3:8888/penglong/ewyb-front/commit/921d25d))
 
 
-<a name="1.0.40"></a>
-## [1.0.40]() (2019-06-21)
+<a name="1.0.4"></a>
+## [1.0.4]() (2019-06-21)
 
 
 ### Bug Fixes
 * ** pages: 高度变动态了修正**  ([4c0f117](http://192.168.0.3:8888/penglong/ewyb-front/commit/4c0f117))
 * ** pages: 订单列表，删除按钮加载顺序**  ([605e46a](http://192.168.0.3:8888/penglong/ewyb-front/commit/605e46a))
-
+* ** pages: 订单列表 分页加载 样式问题修复**  ([f158683](http://192.168.0.3:8888/penglong/ewyb-front/commit/f158683))
+* ** pages: 截图 自动调整位置**  ([bb1ec42](http://192.168.0.3:8888/penglong/ewyb-front/commit/bb1ec42))
+* ** pages: 轮播图高度**  ([2a6651d](http://192.168.0.3:8888/penglong/ewyb-front/commit/2a6651d))
+* ** pages: 加载中... 判断**  ([4f9466c](http://192.168.0.3:8888/penglong/ewyb-front/commit/4f9466c))
+* ** pages: 订单列表 预览判断**  ([a7795bc](http://192.168.0.3:8888/penglong/ewyb-front/commit/a7795bc))
+* ** pages: 是否尝试刷新当前页面**  ([766bfb3](http://192.168.0.3:8888/penglong/ewyb-front/commit/766bfb3))
 
 
 <a name=""></a>

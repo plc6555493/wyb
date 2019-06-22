@@ -80,6 +80,10 @@ const ebRequestFail = (fail) => {
   let b = fail.errMsg === 'request:fail '
   if (b) {
     console.log('noneNetWork')
+    ebShowModal({ title: '温馨提示：网络开小差了', content: '是否尝试刷新当前页面？' }, function () {
+      ebReLaunch()
+    }, function () {
+    })
     return false
   }
 }
@@ -1296,6 +1300,13 @@ const orderPrintUpdate = (options, successCallback) => {
   }
 }
 
+const ebShowNavigationBarLoading = () => {
+  Taro.showNavigationBarLoading()
+}
+const ebHideNavigationBarLoading = () => {
+  Taro.hideNavigationBarLoading()
+}
+
 export {
   ebRequest,
   ebChooseImage,
@@ -1343,6 +1354,8 @@ export {
   ebShowActionSheet,
   ebGetUserInfo,
   orderPrintUpdate,
+  ebShowNavigationBarLoading,
+  ebHideNavigationBarLoading,
   API_HOST,
   API,
   API_V1,

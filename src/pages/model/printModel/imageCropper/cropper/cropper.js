@@ -1,4 +1,4 @@
-import {ebNavigateTo, ebSetTitleAndReturnState, ebShowLoading, ebShowModal, ebShowToast, ebUploadFile, ebHideLoading} from '../../../../../utils'
+import { ebNavigateTo, ebSetTitleAndReturnState, ebShowLoading, ebShowModal, ebShowToast, ebUploadFile, ebHideLoading } from '../../../../../utils'
 var imageRotate = '/asset/image/rotate.png'
 var imageRotate1 = '/asset/image/rotate1.png'
 var t = getApp()
@@ -20,10 +20,10 @@ Page({
   },
   onLoad: function () {
     let self = this
+    this.cropper = this.selectComponent('#image-cropper')
     ebSetTitleAndReturnState(self)
     let { type } = self.options
     console.log('onLoad type:' + type)
-
     switch (type) {
       case '3':
         // this.setData({
@@ -55,8 +55,10 @@ Page({
         })
         break
     }
+    ebShowLoading('处理中，请稍后')
 
-    this.cropper = this.selectComponent('#image-cropper'); this.setData({
+    this.cropper.imgReset(true)
+    this.setData({
       src: t.props.srcImagePreview
     }); t.globalData.imgSrc = t.props.srcImagePreview
   },
@@ -65,7 +67,8 @@ Page({
   },
   loadimage: function (t) {
     console.log('图片加载，自动调整中')
-    this.cropper.imgReset()
+    ebHideLoading()
+    // this.cropper.imgReset()
   },
   clickcut: function (t) {
     // console.log(t.detail); wx.previewImage({
